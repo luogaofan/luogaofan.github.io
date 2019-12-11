@@ -16,7 +16,7 @@
     <meta name="description" content="" />
     
     <title>
-      归档2019 - 我的博客
+      ES6 Promise 对象 - 我的博客
     </title>
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -26,6 +26,11 @@
   <meta name="generator" content="Hexo 4.1.0"><link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
 </head>
   <body>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Promise-状态"><span class="toc-text">Promise 状态</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#状态的特点"><span class="toc-text">状态的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#状态的缺点"><span class="toc-text">状态的缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#then-方法"><span class="toc-text">then 方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#then-方法的特点"><span class="toc-text">then 方法的特点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#then-方法注意点"><span class="toc-text">then 方法注意点</span></a></li></ol>
+    </div>
     
     <div id="fixed-menu-wrap">
       <span class="iconfont icon-sousuo search-box menu-reset"></span>
@@ -60,7 +65,7 @@
           首页
         </a>
         
-        <a href="/archives" class="current">
+        <a href="/archives" class="">
           归档
         </a>
         
@@ -114,7 +119,7 @@
             首页
           </a>
           
-          <a href="/archives" class="current">
+          <a href="/archives" class="">
             归档
           </a>
           
@@ -159,61 +164,169 @@
     </div>
     <div id="container">
       <div class="main animated bounceInRight delay-0.7s">
-        <div id="archives">
-    
-        <div class="title">
-            归档 
-             - 2019
-        </div>
-    
-
-
-
-
-    
-    
-    <section class="wrap">
-        <div class="meta">
-            <a href="/archives/2019" >
-                2019
-            </a>
-        </div>
-        <div class="year">
-            
-            <article class="item">
-            <a href="/2019/12/11/ES6-Promise-%E5%AF%B9%E8%B1%A1/" title="ES6 Promise 对象">
-                <span>2019/12/11</span>
-                <span>ES6 Promise 对象</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2019/12/11/%E5%A6%82%E4%BD%95%E5%86%99md%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E6%A1%A3/" title="如何写md格式的文档">
-                <span>2019/12/11</span>
-                <span>如何写md格式的文档</span>
-            </a>
-            </article>
-            
-
-
-            <article class="item">
-            <a href="/2019/12/10/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" title="我的第一篇博客">
-                <span>2019/12/10</span>
-                <span>我的第一篇博客</span>
-            </a>
-            </article>
-            
-    
-        </div>
-    </section>
+        <article class="post-entry">
+    <div class="header">
       
-<div class="paginator">
-    <span class="page-number current">1</span>
-</div>
-</div>
+      <div class="title">ES6 Promise 对象</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2019/12/11</span>
+        </span>
 
+        
+          <span class="item leancloud-visitors" id="/2019/12/11/ES6-Promise-%E5%AF%B9%E8%B1%A1/" data-flag-title="ES6 Promise 对象">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/web前端">web前端</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/ES6">ES6</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="概述">概述<a class="post-anchor" href="#概述"></a></h1><p>是异步编程的一种解决方案。<br>从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。</p>
+<h1 id="Promise-状态">Promise 状态<a class="post-anchor" href="#Promise-状态"></a></h1><h2 id="状态的特点">状态的特点<a class="post-anchor" href="#状态的特点"></a></h2><p>Promise 异步操作有三种状态：pending（进行中）、fulfilled（已成功）和 rejected（已失败）。除了异步操作的结果，任何其他操作都无法改变这个状态。</p>
+<p>Promise 对象只有：从 pending 变为 fulfilled 和从 pending 变为 rejected 的状态改变。只要处于 fulfilled 和 rejected ，状态就不会再变了即 resolved（已定型）</p>
+<pre><code class="hljs plain">const p1 &#x3D; new Promise(function(resolve,reject)&#123;
+    resolve(&#39;success1&#39;);
+    resolve(&#39;success2&#39;);
+&#125;); 
+const p2 &#x3D; new Promise(function(resolve,reject)&#123;  
+    resolve(&#39;success3&#39;); 
+    reject(&#39;reject&#39;);
+&#125;);
+p1.then(function(value)&#123;  
+    console.log(value); &#x2F;&#x2F; success1
+&#125;);
+p2.then(function(value)&#123; 
+    console.log(value); &#x2F;&#x2F; success3
+&#125;);</code></pre>
+
+<h2 id="状态的缺点">状态的缺点<a class="post-anchor" href="#状态的缺点"></a></h2><p>无法取消 Promise ，一旦新建它就会立即执行，无法中途取消。</p>
+<p>如果不设置回调函数，Promise 内部抛出的错误，不会反应到外部。</p>
+<p>当处于 pending 状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+<h1 id="then-方法">then 方法<a class="post-anchor" href="#then-方法"></a></h1><p>then 方法接收两个函数作为参数，第一个参数是 Promise 执行成功时的回调，第二个参数是 Promise 执行失败时的回调，两个函数只会有一个被调用。</p>
+<h1 id="then-方法的特点">then 方法的特点<a class="post-anchor" href="#then-方法的特点"></a></h1><p>在 JavaScript 事件队列的当前运行完成之前，回调函数永远不会被调用。</p>
+<pre><code class="hljs plain">const p &#x3D; new Promise(function(resolve,reject)&#123;
+  resolve(&#39;success&#39;);
+&#125;);
+ 
+p.then(function(value)&#123;
+  console.log(value);
+&#125;);
+ 
+console.log(&#39;first&#39;);
+&#x2F;&#x2F; first
+&#x2F;&#x2F; success</code></pre>
+
+<p>通过 .then 形式添加的回调函数，不论什么时候，都会被调用。</p>
+<p>通过多次调用 .then ，可以添加多个回调函数，它们会按照插入顺序并且独立运行。</p>
+<pre><code class="hljs plain">const p &#x3D; new Promise(function(resolve,reject)&#123;
+  resolve(1);
+&#125;).then(function(value)&#123; &#x2F;&#x2F; 第一个then &#x2F;&#x2F; 1
+  console.log(value);
+  return value * 2;
+&#125;).then(function(value)&#123; &#x2F;&#x2F; 第二个then &#x2F;&#x2F; 2
+  console.log(value);
+&#125;).then(function(value)&#123; &#x2F;&#x2F; 第三个then &#x2F;&#x2F; undefined
+  console.log(value);
+  return Promise.resolve(&#39;resolve&#39;); 
+&#125;).then(function(value)&#123; &#x2F;&#x2F; 第四个then &#x2F;&#x2F; resolve
+  console.log(value);
+  return Promise.reject(&#39;reject&#39;); 
+&#125;).then(function(value)&#123; &#x2F;&#x2F; 第五个then &#x2F;&#x2F;reject:reject
+  console.log(&#39;resolve:&#39; + value);
+&#125;, function(err) &#123;
+  console.log(&#39;reject:&#39; + err);
+&#125;);</code></pre>
+
+<p>then 方法将返回一个 resolved 或 rejected 状态的 Promise 对象用于链式调用，且 Promise 对象的值就是这个返回值。</p>
+<h1 id="then-方法注意点">then 方法注意点<a class="post-anchor" href="#then-方法注意点"></a></h1><p>简便的 Promise 链式编程最好保持扁平化，不要嵌套 Promise。</p>
+<p>注意总是返回或终止 Promise 链。</p>
+<pre><code class="hljs plain">const p1 &#x3D; new Promise(function(resolve,reject)&#123;
+  resolve(1);
+&#125;).then(function(result) &#123;
+  p2(result).then(newResult &#x3D;&gt; p3(newResult));
+&#125;).then(() &#x3D;&gt; p4());</code></pre>
+
+<p>创建新 Promise 但忘记返回它时，对应链条被打破，导致 p4 会与 p2 和 p3 同时进行。</p>
+<p>大多数浏览器中不能终止的 Promise 链里的 rejection，建议后面都跟上 .catch(error =&gt; console.log(error));</p>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2019/12/11/%E5%A6%82%E4%BD%95%E5%86%99md%E6%A0%BC%E5%BC%8F%E7%9A%84%E6%96%87%E6%A1%A3/">如何写md格式的文档</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://luogaofan.github.io">地古nier</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://luogaofan.github.io">地古nier</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
         <footer>
           <div class="copyright">
             ©2019

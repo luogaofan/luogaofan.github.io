@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luogaofan.github.io/"/>
-  <updated>2019-12-11T07:07:41.910Z</updated>
+  <updated>2019-12-11T11:52:11.464Z</updated>
   <id>https://luogaofan.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6 Promise 对象</title>
+    <link href="https://luogaofan.github.io/2019/12/11/ES6-Promise-%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://luogaofan.github.io/2019/12/11/ES6-Promise-%E5%AF%B9%E8%B1%A1/</id>
+    <published>2019-12-11T11:36:43.000Z</published>
+    <updated>2019-12-11T11:52:11.464Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;概述&quot;&gt;概述&lt;a class=&quot;post-anchor&quot; href=&quot;#概述&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;是异步编程的一种解决方案。&lt;br&gt;从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。&lt;/p&gt;
+&lt;h1 id=&quot;Promise-状态&quot;&gt;Prom
+      
+    
+    </summary>
+    
+    
+      <category term="web前端" scheme="https://luogaofan.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="ES6" scheme="https://luogaofan.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>如何写md格式的文档</title>
