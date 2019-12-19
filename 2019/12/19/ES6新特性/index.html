@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script>
+  var _hmt = _hmt || []
+  ;(function() {
+    var hm = document.createElement('script')
+    hm.src = 'https://hm.baidu.com/hm.js?5a0acc897fd96474a2c8f4deac84611a'
+    var s = document.getElementsByTagName('script')[0]
+    s.parentNode.insertBefore(hm, s)
+  })()
+</script> 
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    
+    <title>
+      ES6新特性 - 我的博客
+    </title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+<link rel="stylesheet" href="/style/style.css">
+
+  <meta name="generator" content="Hexo 4.1.0"><link rel="alternate" href="/atom.xml" title="我的博客" type="application/atom+xml">
+</head>
+  <body>
+    
+    <div id="post-toc" class="animated hiddenToc hide">
+      <span class="title">Toc</span>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#介绍"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ES6-ES2015"><span class="toc-text">ES6(ES2015)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Let-和-Const"><span class="toc-text">Let 和 Const</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#类（Class）"><span class="toc-text">类（Class）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#箭头函数（Arrow-function）"><span class="toc-text">箭头函数（Arrow function）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数参数默认值（Function-parameter-defaults）"><span class="toc-text">函数参数默认值（Function parameter defaults）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模板字符串（Template-string）"><span class="toc-text">模板字符串（Template string）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解构赋值（Destructuring-assignment）"><span class="toc-text">解构赋值（Destructuring assignment）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模块化（Module）"><span class="toc-text">模块化（Module）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展操作符（Spread-operator）"><span class="toc-text">扩展操作符（Spread operator）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象属性简写（Object-attribute-shorthand）"><span class="toc-text">对象属性简写（Object attribute shorthand）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Promise"><span class="toc-text">Promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#for…of"><span class="toc-text">for…of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Symbol"><span class="toc-text">Symbol</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#迭代器（Iterator）-生成器（Generator）"><span class="toc-text">迭代器（Iterator）&#x2F; 生成器（Generator）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Set-WeakSet"><span class="toc-text">Set&#x2F;WeakSet</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map-WeakMap"><span class="toc-text">Map&#x2F;WeakMap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Proxy-Reflect"><span class="toc-text">Proxy&#x2F;Reflect</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Regex对象的扩展"><span class="toc-text">Regex对象的扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#正则新增符号"><span class="toc-text">正则新增符号</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div id="fixed-menu-wrap">
+      <span class="iconfont icon-sousuo search-box menu-reset"></span>
+      <span class="icon-toc menu-reset">Toc</span>
+      <span class="iconfont icon-arrowup menu-reset"></span>
+    </div>
+    <div id="fixed-menu">
+      <span class="iconfont icon-menu-"></span>
+    </div>
+    <div id="progress">
+      <div class="line"></div>
+    </div>
+    <div id="search-shade" class="animated hiddenSearch hide">
+      <div class="input-wrap">
+        <span class="iconfont icon-sousuo search-box"></span>
+        <input type="text" placeholder="Search" />
+        <span class="iconfont icon-close"></span>
+      </div>
+      <div class="search-result">
+        <div class="meta">
+          <span><b id="result-count">0</b> results found</span>
+          <img src="/images/logo.jpeg" />
+        </div>
+        <ul id="result-box"></ul>
+      </div>
+    </div>
+    <div id="menu-mask" class="animated hideMenuMask hide">
+      <span class="iconfont icon-close"></span>
+      <div class="nav">
+        
+        <a href="/" class="">
+          首页
+        </a>
+        
+        <a href="/archives" class="">
+          归档
+        </a>
+        
+        <a href="/categories" class="">
+          分类
+        </a>
+        
+        <a href="/tags" class="">
+          标签
+        </a>
+        
+        <a href="/friends" class="">
+          友链
+        </a>
+        
+        <a href="/about" class="">
+          关于
+        </a>
+        
+      </div>
+    </div>
+    <div id="header">
+      <div class="intro">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <div class="author">地古nier</div>
+      </div>
+      <div class="nav">
+        <span class="iconfont icon-menu menu-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+    </div>
+    <div id="side" class="animated bounceInLeft">
+      <div class="shrink">
+        <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        <span class="iconfont icon-menu toggle-icon"></span>
+        <a href="#" class="search-box">
+          <span class="iconfont icon-sousuo"></span>
+        </a>
+      </div>
+      <div class="magnify">
+        <div class="about">
+          <div class="author">地古nier</div>
+          <a href="/" class="logo" style="background-image: url('/images/logo.jpeg')"></a>
+        </div>
+
+        <div class="nav">
+          
+          <a href="/" class="">
+            首页
+          </a>
+          
+          <a href="/archives" class="">
+            归档
+          </a>
+          
+          <a href="/categories" class="">
+            分类
+          </a>
+          
+          <a href="/tags" class="">
+            标签
+          </a>
+          
+          <a href="/friends" class="">
+            友链
+          </a>
+          
+          <a href="/about" class="">
+            关于
+          </a>
+          
+          <a href="#" class="search-box">
+            <span class="iconfont icon-sousuo"></span>
+          </a>
+        </div>
+        <div class="bottom">
+          <div class="follow">
+            
+            <a href="https://github.com/luogaofan" target="_block">
+              <span class="iconfont icon-github"></span>
+            </a>
+            
+            <a href="https://weibo.com/2727664943/profile?topnav=1&amp;wvr=6&amp;is_all=1" target="_block">
+              <span class="iconfont icon-weibo"></span>
+            </a>
+             
+            <a href="/atom.xml" target="_block">
+              <span class="iconfont icon-rss"></span>
+            </a>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="container">
+      <div class="main animated bounceInRight delay-0.7s">
+        <article class="post-entry">
+    <div class="header">
+      
+      <div class="title">ES6新特性</div>
+      <div class="meta">
+        <span class="item">
+          <span class="iconfont icon-time-circle"></span>
+          <span>2019/12/19</span>
+        </span>
+
+        
+          <span class="item leancloud-visitors" id="/2019/12/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7/" data-flag-title="ES6新特性">
+            <span class="iconfont icon-eye1"></span>
+            <span class="leancloud-visitors-count"></span>
+          </span>
+        
+
+         
+        <span class="item">
+          <span class="iconfont icon-folder"></span>
+          <span>
+              
+                
+                  <a href="/categories/web前端">web前端</a>
+                
+              
+          </span>
+        </span>
+        
+        
+         
+          <span class="item">
+            <span class="iconfont icon-tag1"></span>
+            <span>
+                
+                  
+                    <a href="/tags/ES6">ES6</a>
+                  
+                
+            </span>
+          </span>
+         
+      </div>
+      <div>
+      </div>
+    </div>
+    <h1 id="介绍">介绍<a class="post-anchor" href="#介绍"></a></h1><p>ECMAScript是一种由Ecma国际（前身为欧洲计算机制造商协会）在标准ECMA-262中定义的脚本语言规范。这种语言在万维网上应用广泛，它往往被称为JavaScript或JScript，但实际上后两者是ECMA-262标准的实现和扩展。</p>
+<h1 id="ES6-ES2015">ES6(ES2015)<a class="post-anchor" href="#ES6-ES2015"></a></h1><h2 id="Let-和-Const">Let 和 Const<a class="post-anchor" href="#Let-和-Const"></a></h2><p>在ES6以前，JS只有var一种声明方式，但是在ES6之后，就多了let跟const这两种方式。用var定义的变量没有块级作用域的概念，而let跟const则会有，因为这三个关键字创建是不一样的.</p>
+<p>区别如下：</p>
+<pre><code class="hljs plain">&#123;
+    var a &#x3D; 10
+    let b &#x3D; 20
+    const c &#x3D; 30
+&#125;
+a &#x2F;&#x2F; 10
+b &#x2F;&#x2F; Uncaught ReferenceError: b is not defined
+c &#x2F;&#x2F; c is not defined
+let d &#x3D; 40
+const e &#x3D; 50
+d &#x3D; 60
+d &#x2F;&#x2F; 60
+e &#x3D; 70 &#x2F;&#x2F; VM231:1 Uncaught TypeError: Assignment to constant variable.</code></pre>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">var</th>
+<th align="center">let</th>
+<th align="center">const</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>变量提升</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>全局变量</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>重复声明</td>
+<td align="center">√</td>
+<td align="center">×</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>重新赋值</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+<tr>
+<td>暂时死区</td>
+<td align="center">×</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td>块作用域</td>
+<td align="center">×</td>
+<td align="center">√</td>
+<td align="center">√</td>
+</tr>
+<tr>
+<td>只声明不初始化</td>
+<td align="center">√</td>
+<td align="center">√</td>
+<td align="center">×</td>
+</tr>
+</tbody></table>
+<h2 id="类（Class）">类（Class）<a class="post-anchor" href="#类（Class）"></a></h2><p>在ES6之前，如果我们要生成一个实例对象，传统的方法就是写一个构造函数，例子如下：</p>
+<pre><code class="hljs plain">function Person(name, age) &#123;
+    this.name &#x3D; name
+    this.age &#x3D; age
+&#125;
+Person.prototype.information &#x3D; function () &#123;
+    return &#39;My name is &#39; + this.name + &#39;, I am &#39; + this.age
+&#125;</code></pre>
+
+<p>但是在ES6之后，我们只需要写成以下形式：</p>
+<pre><code class="hljs plain">class Person &#123;
+    constructor(name, age) &#123;
+        this.name &#x3D; name
+        this.age &#x3D; age
+    &#125;
+    information() &#123;
+        return &#39;My name is &#39; + this.name + &#39;, I am &#39; + this.age
+    &#125;
+&#125;</code></pre>
+
+<h2 id="箭头函数（Arrow-function）">箭头函数（Arrow function）<a class="post-anchor" href="#箭头函数（Arrow-function）"></a></h2><p>箭头函数表达式的语法比函数表达式更简洁，并且没有自己的this，arguments，super或 new.target。这些函数表达式更适用于那些本来需要匿名函数的地方，并且它们不能用作构造函数。</p>
+<p>在ES6以前，我们写函数一般是：</p>
+<pre><code class="hljs plain">var list &#x3D; [1, 2, 3, 4, 5, 6, 7]
+var newList &#x3D; list.map(function (item) &#123;
+    return item * item
+&#125;)</code></pre>
+
+<p>但是在ES6里，我们可以：</p>
+<pre><code class="hljs plain">const list &#x3D; [1, 2, 3, 4, 5, 6, 7]
+const newList &#x3D; list.map(item &#x3D;&gt; item * item)</code></pre>
+
+<h2 id="函数参数默认值（Function-parameter-defaults）">函数参数默认值（Function parameter defaults）<a class="post-anchor" href="#函数参数默认值（Function-parameter-defaults）"></a></h2><p>在ES6之前，如果我们写函数需要定义初始值的时候，需要这么写：</p>
+<pre><code class="hljs plain">function config (data) &#123;
+    var data &#x3D; data || &#39;data is empty&#39;
+&#125;</code></pre>
+
+<p>这样看起来也没有问题，但是如果参数的布尔值为falsy时就会出问题，例如我们这样调用config：</p>
+<pre><code class="hljs plain">config(0)
+config(&#39;&#39;)</code></pre>
+
+<p>那么结果就永远是后面的值</p>
+<p>如果我们用函数参数默认值就没有这个问题，写法如下：</p>
+<pre><code class="hljs plain">const config &#x3D; (data &#x3D; &#39;data is empty&#39;) &#x3D;&gt; &#123;&#125;</code></pre>
+
+<h2 id="模板字符串（Template-string）">模板字符串（Template string）<a class="post-anchor" href="#模板字符串（Template-string）"></a></h2><p>在ES6之前，如果我们要拼接字符串，则需要像这样：</p>
+<pre><code class="hljs plain">var name &#x3D; &#39;kris&#39;
+var age &#x3D; 24
+var info &#x3D; &#39;My name is &#39; + this.name + &#39;, I am &#39; + this.age</code></pre>
+
+<p>但是在ES6之后，我们只需要写成以下形式：</p>
+<pre><code class="hljs plain">const name &#x3D; &#39;kris&#39;
+const age &#x3D; 24
+const info &#x3D; &#96;My name is $&#123;name&#125;, I am $&#123;age&#125;&#96;</code></pre>
+
+<h2 id="解构赋值（Destructuring-assignment）">解构赋值（Destructuring assignment）<a class="post-anchor" href="#解构赋值（Destructuring-assignment）"></a></h2><p>我们通过解构赋值, 可以将属性/值从对象/数组中取出,赋值给其他变量。</p>
+<p>比如我们需要交换两个变量的值，在ES6之前我们可能需要：</p>
+<pre><code class="hljs plain">var a &#x3D; 10
+var b &#x3D; 20
+var temp &#x3D; a
+a &#x3D; b
+b &#x3D; temp</code></pre>
+
+<p>但是在ES6里，我们有：</p>
+<pre><code class="hljs plain">let a &#x3D; 10
+let b &#x3D; 20
+[a, b] &#x3D; [b, a]</code></pre>
+
+<h2 id="模块化（Module）">模块化（Module）<a class="post-anchor" href="#模块化（Module）"></a></h2><p>在ES6之前，JS并没有模块化的概念，有的也只是社区定制的类似CommonJS和AMD之类的规则。例如基于CommonJS的NodeJS：</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; circle.js
+&#x2F;&#x2F; 输出
+const &#123; PI &#125; &#x3D; Math
+exports.area &#x3D; (r) &#x3D;&gt; PI * r ** 2
+exports.circumference &#x3D; (r) &#x3D;&gt; 2 * PI * r
+
+&#x2F;&#x2F; index.js
+&#x2F;&#x2F; 输入
+const circle &#x3D; require(&#39;.&#x2F;circle.js&#39;)
+console.log(&#96;半径为 4 的圆的面积是 $&#123;circle.area(4)&#125;&#96;)</code></pre>
+
+<p>在ES6之后我们则可以写成以下形式：</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; circle.js
+&#x2F;&#x2F; 输出
+const &#123; PI &#125; &#x3D; Math
+export const area &#x3D; (r) &#x3D;&gt; PI * r ** 2
+export const circumference &#x3D; (r) &#x3D;&gt; 2 * PI * r
+
+&#x2F;&#x2F; index.js
+&#x2F;&#x2F; 输入
+import &#123;
+    area
+&#125; &#x3D; &#39;.&#x2F;circle.js&#39;
+console.log(&#96;半径为 4 的圆的面积是: $&#123;area(4)&#125;&#96;)</code></pre>
+
+<h2 id="扩展操作符（Spread-operator）">扩展操作符（Spread operator）<a class="post-anchor" href="#扩展操作符（Spread-operator）"></a></h2><p>扩展操作符可以在函数调用/数组构造时, 将数组表达式或者string在语法层面展开；还可以在构造字面量对象时, 将对象表达式按key-value的方式展开。<br>比如在ES5的时候，我们要对一个数组的元素进行相加，在不使用reduce或者reduceRight的场合，我们需要：</p>
+<pre><code class="hljs plain">function sum(x, y, z) &#123;
+    return x + y + z;
+&#125;
+var list &#x3D; [5, 6, 7]
+var total &#x3D; sum.apply(null, list)</code></pre>
+
+<p>但是如果我们使用扩展操作符，只需要如下：</p>
+<pre><code class="hljs plain">const sum &#x3D; (x, y, z) &#x3D;&gt; x + y + z
+const list &#x3D; [5, 6, 7]
+const total &#x3D; sum(...list)</code></pre>
+
+<p>但是如果我们使用扩展操作符，只需要如下：</p>
+<pre><code class="hljs plain">const sum &#x3D; (x, y, z) &#x3D;&gt; x + y + z
+const list &#x3D; [5, 6, 7]
+const total &#x3D; sum(...list)</code></pre>
+
+<p>非常的简单，但是要注意的是扩展操作符只能用于可迭代对象</p>
+<p>如果是下面的情况，是会报错的：</p>
+<pre><code class="hljs plain">var obj &#x3D; &#123;&#39;key1&#39;: &#39;value1&#39;&#125;
+var array &#x3D; [...obj] &#x2F;&#x2F; TypeError: obj is not iterable</code></pre>
+
+<h2 id="对象属性简写（Object-attribute-shorthand）">对象属性简写（Object attribute shorthand）<a class="post-anchor" href="#对象属性简写（Object-attribute-shorthand）"></a></h2><p>在ES6之前，如果我们要将某个变量赋值为同样名称的对象元素，则需要：</p>
+<pre><code class="hljs plain">var cat &#x3D; &#39;Miaow&#39;
+var dog &#x3D; &#39;Woof&#39;
+var bird &#x3D; &#39;Peet peet&#39;
+var someObject &#x3D; &#123;
+  cat: cat,
+  dog: dog,
+  bird: bird
+&#125;</code></pre>
+
+<p>但是在ES6里我们就方便很多：</p>
+<pre><code class="hljs plain">let cat &#x3D; &#39;Miaow&#39;
+let dog &#x3D; &#39;Woof&#39;
+let bird &#x3D; &#39;Peet peet&#39;
+
+let someObject &#x3D; &#123;
+  cat,
+  dog,
+  bird
+&#125;
+
+console.log(someObject)
+
+&#x2F;&#x2F;&#123;
+&#x2F;&#x2F;  cat: &quot;Miaow&quot;,
+&#x2F;&#x2F;  dog: &quot;Woof&quot;,
+&#x2F;&#x2F;  bird: &quot;Peet peet&quot;
+&#x2F;&#x2F;&#125;</code></pre>
+
+<h2 id="Promise">Promise<a class="post-anchor" href="#Promise"></a></h2><p>Promise 是ES6提供的一种异步解决方案，比回调函数更加清晰明了。<br>Promise 翻译过来就是承诺的意思，这个承诺会在未来有一个确切的答复，并且该承诺有三种状态，分别是：</p>
+<p>等待中（pending）<br>完成了 （resolved）<br>拒绝了（rejected）</p>
+<p>这个承诺一旦从等待状态变成为其他状态就永远不能更改状态了，也就是说一旦状态变为 resolved 后，就不能再次改变</p>
+<pre><code class="hljs plain">new Promise((resolve, reject) &#x3D;&gt; &#123;
+  resolve(&#39;success&#39;)
+  &#x2F;&#x2F; 无效
+  reject(&#39;reject&#39;)
+&#125;)</code></pre>
+
+<p>当我们在构造 Promise 的时候，构造函数内部的代码是立即执行的</p>
+<pre><code class="hljs plain">new Promise((resolve, reject) &#x3D;&gt; &#123;
+  console.log(&#39;new Promise&#39;)
+  resolve(&#39;success&#39;)
+&#125;)
+console.log(&#39;finifsh&#39;)
+&#x2F;&#x2F; new Promise -&gt; finifsh</code></pre>
+
+<p>Promise 实现了链式调用，也就是说每次调用 then 之后返回的都是一个 Promise，并且是一个全新的 Promise，原因也是因为状态不可变。如果你在 then 中 使用了 return，那么 return 的值会被 Promise.resolve() 包装</p>
+<pre><code class="hljs plain">Promise.resolve(1)
+  .then(res &#x3D;&gt; &#123;
+    console.log(res) &#x2F;&#x2F; &#x3D;&gt; 1
+    return 2 &#x2F;&#x2F; 包装成 Promise.resolve(2)
+  &#125;)
+  .then(res &#x3D;&gt; &#123;
+    console.log(res) &#x2F;&#x2F; &#x3D;&gt; 2
+  &#125;)</code></pre>
+
+<p>当然了，Promise 也很好地解决了回调地狱的问题，例如：</p>
+<pre><code class="hljs plain">ajax(url, () &#x3D;&gt; &#123;
+    &#x2F;&#x2F; 处理逻辑
+    ajax(url1, () &#x3D;&gt; &#123;
+        &#x2F;&#x2F; 处理逻辑
+        ajax(url2, () &#x3D;&gt; &#123;
+            &#x2F;&#x2F; 处理逻辑
+        &#125;)
+    &#125;)
+&#125;)</code></pre>
+
+<p>可以改写成：</p>
+<pre><code class="hljs plain">ajax(url)
+  .then(res &#x3D;&gt; &#123;
+      console.log(res)
+      return ajax(url1)
+  &#125;).then(res &#x3D;&gt; &#123;
+      console.log(res)
+      return ajax(url2)
+  &#125;).then(res &#x3D;&gt; console.log(res))</code></pre>
+
+<h2 id="for…of">for…of<a class="post-anchor" href="#for…of"></a></h2><p>for…of语句在可迭代对象（包括 Array，Map，Set，String，TypedArray，arguments 对象等等）上创建一个迭代循环，调用自定义迭代钩子，并为每个不同属性的值执行语句。<br>例子如下：</p>
+<pre><code class="hljs plain">const array1 &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;];
+
+for (const element of array1) &#123;
+      console.log(element)
+&#125;
+
+&#x2F;&#x2F; &quot;a&quot;
+&#x2F;&#x2F; &quot;b&quot;
+&#x2F;&#x2F; &quot;c&quot;</code></pre>
+
+<h2 id="Symbol">Symbol<a class="post-anchor" href="#Symbol"></a></h2><p>symbol 是一种基本数据类型，Symbol()函数会返回symbol类型的值，该类型具有静态属性和静态方法。它的静态属性会暴露几个内建的成员对象；它的静态方法会暴露全局的symbol注册，且类似于内建对象类，但作为构造函数来说它并不完整，因为它不支持语法：”new Symbol()”。<br>每个从Symbol()返回的symbol值都是唯一的。一个symbol值能作为对象属性的标识符；这是该数据类型仅有的目的。<br>例子如下：</p>
+<pre><code class="hljs plain">const symbol1 &#x3D; Symbol();
+const symbol2 &#x3D; Symbol(42);
+const symbol3 &#x3D; Symbol(&#39;foo&#39;);
+
+console.log(typeof symbol1); &#x2F;&#x2F; &quot;symbol&quot;
+console.log(symbol3.toString()); &#x2F;&#x2F; &quot;Symbol(foo)&quot;
+console.log(Symbol(&#39;foo&#39;) &#x3D;&#x3D;&#x3D; Symbol(&#39;foo&#39;)); &#x2F;&#x2F; false</code></pre>
+<h2 id="迭代器（Iterator）-生成器（Generator）">迭代器（Iterator）/ 生成器（Generator）<a class="post-anchor" href="#迭代器（Iterator）-生成器（Generator）"></a></h2><p>迭代器（Iterator）是一种迭代的机制，为各种不同的数据结构提供统一的访问机制。任何数据结构只要内部有 Iterator 接口，就可以完成依次迭代操作。<br>一旦创建，迭代器对象可以通过重复调用next()显式地迭代，从而获取该对象每一级的值，直到迭代完，返回{ value: undefined, done: true }<br>虽然自定义的迭代器是一个有用的工具，但由于需要显式地维护其内部状态，因此需要谨慎地创建。生成器函数提供了一个强大的选择：它允许你定义一个包含自有迭代算法的函数， 同时它可以自动维护自己的状态。 生成器函数使用 function*语法编写。 最初调用时，生成器函数不执行任何代码，而是返回一种称为Generator的迭代器。 通过调用生成器的下一个方法消耗值时，Generator函数将执行，直到遇到yield关键字。<br>可以根据需要多次调用该函数，并且每次都返回一个新的Generator，但每个Generator只能迭代一次。<br>所以我们可以有以下例子：</p>
+<pre><code class="hljs plain">function* makeRangeIterator(start &#x3D; 0, end &#x3D; Infinity, step &#x3D; 1) &#123;
+    for (let i &#x3D; start; i &lt; end; i +&#x3D; step) &#123;
+        yield i;
+    &#125;
+&#125;
+var a &#x3D; makeRangeIterator(1,10,2)
+a.next() &#x2F;&#x2F; &#123;value: 1, done: false&#125;
+a.next() &#x2F;&#x2F; &#123;value: 3, done: false&#125;
+a.next() &#x2F;&#x2F; &#123;value: 5, done: false&#125;
+a.next() &#x2F;&#x2F; &#123;value: 7, done: false&#125;
+a.next() &#x2F;&#x2F; &#123;value: 9, done: false&#125;
+a.next() &#x2F;&#x2F; &#123;value: undefined, done: true&#125;</code></pre>
+
+<h2 id="Set-WeakSet">Set/WeakSet<a class="post-anchor" href="#Set-WeakSet"></a></h2><p>Set 对象允许你存储任何类型的唯一值，无论是原始值或者是对象引用。<br>所以我们可以通过Set实现数组去重</p>
+<pre><code class="hljs plain">const numbers &#x3D; [2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5]
+console.log([...new Set(numbers)]) 
+&#x2F;&#x2F; [2, 3, 4, 5, 6, 7, 32]</code></pre>
+
+<p>WeakSet 结构与 Set 类似，但区别有以下两点：</p>
+<p>WeakSet 对象中只能存放对象引用, 不能存放值, 而 Set 对象都可以。<br>WeakSet 对象中存储的对象值都是被弱引用的, 如果没有其他的变量或属性引用这个对象值, 则这个对象值会被当成垃圾回收掉. 正因为这样, WeakSet 对象是无法被枚举的, 没有办法拿到它包含的所有元素。</p>
+<p>所以代码如下：</p>
+<pre><code class="hljs plain">var ws &#x3D; new WeakSet()
+var obj &#x3D; &#123;&#125;
+var foo &#x3D; &#123;&#125;
+
+ws.add(window)
+ws.add(obj)
+
+ws.has(window) &#x2F;&#x2F; true
+ws.has(foo)    &#x2F;&#x2F; false, 对象 foo 并没有被添加进 ws 中 
+
+ws.delete(window) &#x2F;&#x2F; 从集合中删除 window 对象
+ws.has(window)    &#x2F;&#x2F; false, window 对象已经被删除了
+
+ws.clear() &#x2F;&#x2F; 清空整个 WeakSet 对象</code></pre>
+
+<h2 id="Map-WeakMap">Map/WeakMap<a class="post-anchor" href="#Map-WeakMap"></a></h2><p>Map 对象保存键值对。任何值(对象或者原始值) 都可以作为一个键或一个值。<br>例子如下，我们甚至可以使用NaN来作为键值：</p>
+<pre><code class="hljs plain">var myMap &#x3D; new Map();
+myMap.set(NaN, &quot;not a number&quot;);
+
+myMap.get(NaN); &#x2F;&#x2F; &quot;not a number&quot;
+
+var otherNaN &#x3D; Number(&quot;foo&quot;);
+myMap.get(otherNaN); &#x2F;&#x2F; &quot;not a number&quot;</code></pre>
+
+<p>WeakMap 对象是一组键/值对的集合，其中的键是弱引用的。其键必须是对象，而值可以是任意的。<br>跟Map的区别与Set跟WeakSet的区别相似，具体代码如下：</p>
+<pre><code class="hljs plain">var wm1 &#x3D; new WeakMap(),
+    wm2 &#x3D; new WeakMap(),
+    wm3 &#x3D; new WeakMap();
+var o1 &#x3D; &#123;&#125;,
+    o2 &#x3D; function()&#123;&#125;,
+    o3 &#x3D; window;
+
+wm1.set(o1, 37);
+wm1.set(o2, &quot;azerty&quot;);
+wm2.set(o1, o2); &#x2F;&#x2F; value可以是任意值,包括一个对象
+wm2.set(o3, undefined);
+wm2.set(wm1, wm2); &#x2F;&#x2F; 键和值可以是任意对象,甚至另外一个WeakMap对象
+wm1.get(o2); &#x2F;&#x2F; &quot;azerty&quot;
+wm2.get(o2); &#x2F;&#x2F; undefined,wm2中没有o2这个键
+wm2.get(o3); &#x2F;&#x2F; undefined,值就是undefined
+
+wm1.has(o2); &#x2F;&#x2F; true
+wm2.has(o2); &#x2F;&#x2F; false
+wm2.has(o3); &#x2F;&#x2F; true (即使值是undefined)
+
+wm3.set(o1, 37);
+wm3.get(o1); &#x2F;&#x2F; 37
+wm3.clear();
+wm3.get(o1); &#x2F;&#x2F; undefined,wm3已被清空
+wm1.has(o1);   &#x2F;&#x2F; true
+wm1.delete(o1);
+wm1.has(o1);   &#x2F;&#x2F; false</code></pre>
+
+<h2 id="Proxy-Reflect">Proxy/Reflect<a class="post-anchor" href="#Proxy-Reflect"></a></h2><p>Proxy 对象用于定义基本操作的自定义行为（如属性查找，赋值，枚举，函数调用等）。<br>Reflect 是一个内置的对象，它提供拦截 JavaScript 操作的方法。这些方法与  Proxy 的方法相同。Reflect不是一个函数对象，因此它是不可构造的。<br>Proxy跟Reflect是非常完美的配合，例子如下：</p>
+<pre><code class="hljs plain">const observe &#x3D; (data, callback) &#x3D;&gt; &#123;
+      return new Proxy(data, &#123;
+            get(target, key) &#123;
+                return Reflect.get(target, key)
+            &#125;,
+            set(target, key, value, proxy) &#123;
+                  callback(key, value);
+                  target[key] &#x3D; value;
+                    return Reflect.set(target, key, value, proxy)
+            &#125;
+      &#125;)
+&#125;
+
+const FooBar &#x3D; &#123; open: false &#125;;
+const FooBarObserver &#x3D; observe(FooBar, (property, value) &#x3D;&gt; &#123;
+  property &#x3D;&#x3D;&#x3D; &#39;open&#39; &amp;&amp; value 
+          ? console.log(&#39;FooBar is open!!!&#39;) 
+          : console.log(&#39;keep waiting&#39;);
+&#125;);
+console.log(FooBarObserver.open) &#x2F;&#x2F; false
+FooBarObserver.open &#x3D; true &#x2F;&#x2F; FooBar is open!!!</code></pre>
+<p>当然也不是什么都可以被代理的，如果对象带有configurable: false 跟writable: false 属性，则代理失效。</p>
+<h2 id="Regex对象的扩展">Regex对象的扩展<a class="post-anchor" href="#Regex对象的扩展"></a></h2><h3 id="正则新增符号">正则新增符号<a class="post-anchor" href="#正则新增符号"></a></h3><p>i 修饰符</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; i 修饰符
+&#x2F;[a-z]&#x2F;i.test(&#39;\u212A&#39;) &#x2F;&#x2F; false
+&#x2F;[a-z]&#x2F;iu.test(&#39;\u212A&#39;) &#x2F;&#x2F; true</code></pre>
+
+<p>y修饰符</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; y修饰符
+var s &#x3D; &#39;aaa_aa_a&#39;;
+var r1 &#x3D; &#x2F;a+&#x2F;g;
+var r2 &#x3D; &#x2F;a+&#x2F;y;
+
+r1.exec(s) &#x2F;&#x2F; [&quot;aaa&quot;]
+r2.exec(s) &#x2F;&#x2F; [&quot;aaa&quot;]
+
+r1.exec(s) &#x2F;&#x2F; [&quot;aa&quot;]
+r2.exec(s) &#x2F;&#x2F; null</code></pre>
+
+<p>String.prototype.flags</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; 查看RegExp构造函数的修饰符
+var regex &#x3D; new RegExp(&#39;xyz&#39;, &#39;i&#39;)
+regex.flags &#x2F;&#x2F; &#39;i&#39;</code></pre>
+
+<p>unicode模式</p>
+<pre><code class="hljs plain">var s &#x3D; &#39;𠮷&#39;
+&#x2F;^.$&#x2F;.test(s) &#x2F;&#x2F; false
+&#x2F;^.$&#x2F;u.test(s) &#x2F;&#x2F; true</code></pre>
+
+<p>u转义</p>
+<pre><code class="hljs plain">&#x2F;&#x2F; u转义
+&#x2F;\,&#x2F; &#x2F;&#x2F; &#x2F;\,&#x2F;
+&#x2F;\,&#x2F;u &#x2F;&#x2F; 报错 没有u修饰符时，逗号前面的反斜杠是无效的，加了u修饰符就报错。</code></pre>
+
+<p>引用</p>
+<pre><code class="hljs plain">const RE_TWICE &#x3D; &#x2F;^(?&lt;word&gt;[a-z]+)!\k&lt;word&gt;$&#x2F;;
+RE_TWICE.test(&#39;abc!abc&#39;) &#x2F;&#x2F; true
+RE_TWICE.test(&#39;abc!ab&#39;) &#x2F;&#x2F; false
+
+const RE_TWICE &#x3D; &#x2F;^(?&lt;word&gt;[a-z]+)!\1$&#x2F;;
+RE_TWICE.test(&#39;abc!abc&#39;) &#x2F;&#x2F; true
+RE_TWICE.test(&#39;abc!ab&#39;) &#x2F;&#x2F; false</code></pre>
+
+<p>字符串方法的实现改为调用RegExp方法</p>
+<blockquote>
+<p>String.prototype.match 调用 RegExp.prototype[Symbol.match]<br>String.prototype.replace 调用 RegExp.prototype[Symbol.replace]<br>String.prototype.search 调用 RegExp.prototype[Symbol.search]<br>String.prototype.split 调用 RegExp.prototype[Symbol.split]</p>
+</blockquote>
+<p>正则新增属性</p>
+<p>RegExp.prototype.sticky 表示是否有y修饰符</p>
+<pre><code class="hljs plain">&#x2F;hello\d&#x2F;y.sticky &#x2F;&#x2F; true</code></pre>
+<p>RegExp.prototype.flags获取修饰符</p>
+<pre><code class="hljs plain">&#x2F;abc&#x2F;ig.flags &#x2F;&#x2F; &#39;gi&#39;</code></pre>
+
+<p>Math对象的扩展</p>
+<p>二进制表示法 : 0b或0B开头表示二进制(0bXX或0BXX)</p>
+<p>二进制表示法 : 0b或0B开头表示二进制(0bXX或0BXX)</p>
+<p>八进制表示法 : 0o或0O开头表示二进制(0oXX或0OXX)</p>
+<p>Number.EPSILON : 数值最小精度</p>
+<p>Number.MIN_SAFE_INTEGER : 最小安全数值(-2^53)</p>
+<p>Number.MAX_SAFE_INTEGER : 最大安全数值(2^53)</p>
+<p>Number.parseInt() : 返回转换值的整数部分</p>
+<p>Number.parseFloat() : 返回转换值的浮点数部分</p>
+<p>Number.isFinite() : 是否为有限数值</p>
+<p>Number.isNaN() : 是否为NaN</p>
+<p>Number.isInteger() : 是否为整数</p>
+<p>Number.isSafeInteger() : 是否在数值安全范围内</p>
+<p>Math.trunc() : 返回数值整数部分</p>
+<p>Math.sign() : 返回数值类型(正数1、负数-1、零0)</p>
+<p>Math.cbrt() : 返回数值立方根</p>
+<p>Math.clz32() : 返回数值的32位无符号整数形式</p>
+<p>Math.imul() : 返回两个数值相乘</p>
+<p>Math.fround() : 返回数值的32位单精度浮点数形式</p>
+<p>Math.hypot() : 返回所有数值平方和的平方根</p>
+<p>Math.expm1() : 返回e^n - 1</p>
+<p>Math.log1p() : 返回1 + n的自然对数(Math.log(1 + n))</p>
+<p>Math.log10() : 返回以10为底的n的对数</p>
+<p>Math.log2() : 返回以2为底的n的对数</p>
+<p>Math.sinh() : 返回n的双曲正弦</p>
+<p>Math.cosh() : 返回n的双曲余弦</p>
+<p>Math.tanh() : 返回n的双曲正切</p>
+<p>Math.asinh() : 返回n的反双曲正弦</p>
+<p>Math.acosh() : 返回n的反双曲余弦</p>
+<p>Math.atanh() : 返回n的反双曲正切</p>
+<p>Array对象的扩展</p>
+<p>Array.prototype.from：转换具有Iterator接口的数据结构为真正数组，返回新数组。</p>
+<pre><code class="hljs plain">console.log(Array.from(&#39;foo&#39;)) &#x2F;&#x2F; [&quot;f&quot;, &quot;o&quot;, &quot;o&quot;]
+console.log(Array.from([1, 2, 3], x &#x3D;&gt; x + x)) &#x2F;&#x2F; [2, 4, 6]</code></pre>
+
+<p>Array.prototype.of()：转换一组值为真正数组，返回新数组。</p>
+<pre><code class="hljs plain">Array.of(7)       &#x2F;&#x2F; [7] 
+Array.of(1, 2, 3) &#x2F;&#x2F; [1, 2, 3]
+
+Array(7)          &#x2F;&#x2F; [empty, empty, empty, empty, empty, empty]
+Array(1, 2, 3)    &#x2F;&#x2F; [1, 2, 3]</code></pre>
+
+<p>Array.prototype.copyWithin()：把指定位置的成员复制到其他位置，返回原数组</p>
+<pre><code class="hljs plain">const array1 &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]
+
+console.log(array1.copyWithin(0, 3, 4)) &#x2F;&#x2F; [&quot;d&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;]
+
+console.log(array1.copyWithin(1, 3)) &#x2F;&#x2F; [&quot;d&quot;, &quot;d&quot;, &quot;e&quot;, &quot;d&quot;, &quot;e&quot;]</code></pre>
+
+<p>Array.prototype.find()：返回第一个符合条件的成员</p>
+<pre><code class="hljs plain">const array1 &#x3D; [5, 12, 8, 130, 44]
+
+const found &#x3D; array1.find(element &#x3D;&gt; element &gt; 10)
+
+console.log(found) &#x2F;&#x2F; 12</code></pre>
+
+<p>Array.prototype.findIndex()：返回第一个符合条件的成员索引值</p>
+<pre><code class="hljs plain">const array1 &#x3D; [5, 12, 8, 130, 44]
+
+const isLargeNumber &#x3D; (element) &#x3D;&gt; element &gt; 13
+
+console.log(array1.findIndex(isLargeNumber)) &#x2F;&#x2F; 3</code></pre>
+
+<p>Array.prototype.fill()：根据指定值填充整个数组，返回原数组</p>
+<pre><code class="hljs plain">const array1 &#x3D; [1, 2, 3, 4]
+
+console.log(array1.fill(0, 2, 4)) &#x2F;&#x2F; [1, 2, 0, 0]
+
+console.log(array1.fill(5, 1)) &#x2F;&#x2F; [1, 5, 5, 5]
+
+console.log(array1.fill(6)) &#x2F;&#x2F; [6, 6, 6, 6]</code></pre>
+
+<p>Array.prototype.keys()：返回以索引值为遍历器的对象</p>
+<pre><code class="hljs plain">const array1 &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+const iterator &#x3D; array1.keys()
+
+for (const key of iterator) &#123;
+      console.log(key)
+&#125;
+
+&#x2F;&#x2F; 0
+&#x2F;&#x2F; 1
+&#x2F;&#x2F; 2</code></pre>
+
+<p>Array.prototype.values()：返回以属性值为遍历器的对象</p>
+<pre><code class="hljs plain">const array1 &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+const iterator &#x3D; array1.values()
+
+for (const key of iterator) &#123;
+      console.log(key)
+&#125;
+
+&#x2F;&#x2F; a
+&#x2F;&#x2F; b
+&#x2F;&#x2F; c</code></pre>
+
+<p>Array.prototype.entries()：返回以索引值和属性值为遍历器的对象</p>
+<pre><code class="hljs plain">const array1 &#x3D; [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+const iterator &#x3D; array1.entries()
+
+console.log(iterator.next().value) &#x2F;&#x2F; [0, &quot;a&quot;]
+console.log(iterator.next().value) &#x2F;&#x2F; [1, &quot;b&quot;]</code></pre>
+
+<p>数组空位：ES6明确将数组空位转为undefined或者empty</p>
+<pre><code class="hljs plain">Array.from([&#39;a&#39;,,&#39;b&#39;]) &#x2F;&#x2F; [ &quot;a&quot;, undefined, &quot;b&quot; ]
+[...[&#39;a&#39;,,&#39;b&#39;]] &#x2F;&#x2F; [ &quot;a&quot;, undefined, &quot;b&quot; ]
+Array(3) &#x2F;&#x2F;  [empty × 3]
+[,&#39;a&#39;] &#x2F;&#x2F; [empty, &quot;a&quot;]</code></pre>
+
+
+  
+    <div class="post-reward">
+    <div id="reward-button">打赏</div>
+      <div id="qr">
+        <div class="wrap">
+            
+            <div class="bg-wrap">
+              <a href="/images/zhifubao.png" target="_block" class="bg" style="background-image:url('/images/zhifubao.png')"></a>
+              支付宝
+            </div>
+            
+            
+            <div class="bg-wrap">
+                <a href="/images/weixin.png" target="_block" class="bg" style="background-image:url('/images/weixin.png')"></a>
+              微信
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  
+  <div class="post-guide">
+    <div class="item left">
+        
+    </div>
+    <div class="item right">
+        
+          <a href="/2019/12/13/%E4%BA%BA%E7%94%9F%EF%BC%8C%E8%AF%A5%E6%94%BE%E4%B8%8B%E7%9A%84%EF%BC%8C%E5%88%AB%E7%8F%8D%E6%83%9C/">人生，该放下的，别珍惜</a>
+        
+    </div>
+  </div>
+
+  
+
+  <div class="post-copyright">
+    <div class="auth">
+      本文作者：<a href="https://luogaofan.github.io">地古nier</a>
+    </div>
+    <div class="declare">
+      版权声明：本文首发于<a href="https://luogaofan.github.io">地古nier</a>的博客，转载请注明出处！
+    </div>
+  </div>
+
+  <div id="comment"></div>
+
+  
+  
+</article>
+        <footer>
+          <div class="copyright">
+            ©2019
+            <a href="https://luogaofan.github.io">地古nier</a> Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> |
+            <a href="https://github.com/luogaofan/luogaofan.github.io" target="_blank" rel="noopener">luogaofan.github.io</a>
+          </div>
+          
+        </footer>
+      </div>
+    </div>
+  </body>
+  
+</html>
+<script type="text/javascript">
+                  window.HUHU_CONFIG = JSON.parse("{\"share\":[\"weibo\",\"weixin\",\"qqkongjian\",\"QQ\",\"douban\",\"facebook\",\"twitter\",\"google\"],\"valine\":{\"API_ID\":\"RRWWMoi02GppG4E5qUXVkQar-gzGzoHsz\",\"API_KEY\":\"YQwQmB7IXe0h6BdBT42TbuiF\"},\"service_worker\":{\"open\":false}}")
+                </script> <script type="text/javascript">window.addEventListener('load', function() {
+    
+    window.loadJs = function(d, m, a) {
+      var c = document.getElementsByTagName('head')[0] || document.head || document.documentElement
+      var b = document.createElement('script')
+      b.defer = true
+      b.setAttribute('type', 'text/javascript')
+      b.setAttribute('charset', 'UTF-8')
+      b.setAttribute('async', 'true')
+      b.setAttribute('src', d)
+      m && b.setAttribute('data-main', '/scripts/app-built')
+      if (typeof a === 'function') {
+        if (window.attachEvent) {
+          b.onreadystatechange = function() {
+            var e = b.readyState
+            if (e === 'loaded' || e === 'complete') {
+              b.onreadystatechange = null
+              a()
+            }
+          }
+        } else {
+          b.onload = a
+        }
+      }
+      c.appendChild(b)
+    }
+    window.loadJs && window.loadJs('https://cdn.bootcss.com/require.js/2.3.6/require.min.js', true, function() {require.config({"paths":{"util":"util","share":"share","search":"search","registerSW":"registerSW","valine":"cdn/Valine.min","av":["https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min"],"pjax":["https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min"],"jquery":["https://cdn.bootcss.com/jquery/3.4.1/jquery.min"],"confirm":["https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min"],"fancybox":["https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min"],"chart":["https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.bundle.min"]},"map":{"*":{"css":"https://cdn.bootcss.com/require-css/0.1.10/css.min.js"}},"shim":{"fancybox":{"deps":["css!https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css"]},"confirm":{"deps":["css!https://cdn.bootcss.com/jquery-confirm/3.3.4/jquery-confirm.min.css"]},"chart":{"deps":["css!https://cdn.bootcss.com/Chart.js/2.8.0-rc.1/Chart.min.css"]}},"waitSeconds":3})})
+  })</script> <script type="text/javascript">
+                  ;(function() {
+                    var bp = document.createElement('script')
+                    var curProtocol = window.location.protocol.split(':')[0]
+                    if (curProtocol === 'https') {
+                      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+                    } else {
+                      bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+                    }
+                    var s = document.getElementsByTagName('script')[0]
+                    s.parentNode.insertBefore(bp, s)
+                  })()
+                </script> 

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://luogaofan.github.io/"/>
-  <updated>2019-12-19T03:34:32.815Z</updated>
+  <updated>2019-12-19T11:55:07.214Z</updated>
   <id>https://luogaofan.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ES6新特性</title>
+    <link href="https://luogaofan.github.io/2019/12/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>https://luogaofan.github.io/2019/12/19/ES6%E6%96%B0%E7%89%B9%E6%80%A7/</id>
+    <published>2019-12-19T05:19:54.000Z</published>
+    <updated>2019-12-19T11:55:07.214Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;介绍&quot;&gt;介绍&lt;a class=&quot;post-anchor&quot; href=&quot;#介绍&quot;&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;ECMAScript是一种由Ecma国际（前身为欧洲计算机制造商协会）在标准ECMA-262中定义的脚本语言规范。这种语言在万维网上应用广泛，它往往被称为Jav
+      
+    
+    </summary>
+    
+    
+      <category term="web前端" scheme="https://luogaofan.github.io/categories/web%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="ES6" scheme="https://luogaofan.github.io/tags/ES6/"/>
+    
+  </entry>
   
   <entry>
     <title>人生，该放下的，别珍惜</title>
